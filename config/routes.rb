@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-
-  get "/contacts" => "contacts#get_one_contact"
-
-  get "/all_contacts" => "contacts#get_all_contacts"
-
+#contacts
+  get "/contacts" => "contacts#index"
+  post "/contacts/:id" => "contacts#create"
+  get "/contacts/:id" => "contacts#show"
+  patch "/contacts/:id" => "contacts#update"
+  delete "contacts/:id" => "contacts#destroy"
+#users
+  post "/users" => "users#create"
 
 end

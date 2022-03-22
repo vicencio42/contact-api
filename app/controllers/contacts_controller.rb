@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
 
   def index
-    contacts = Contact.all
+    contact = Contact.all
     render json: contact
   end
 
@@ -38,6 +38,7 @@ class ContactsController < ApplicationController
     else #sad path
       render json: {error_message: contact.errors.full_messages}, status: 422
     end
+  end
 
     def destroy
       contact_id = params["id"]
